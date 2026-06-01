@@ -2,6 +2,34 @@
 
 All notable changes to **BharatValidator** will be documented in this file.
 
+## 1.0.2 — Bug Fixes
+
+aadhaar — Fixed Verhoeff algorithm edge case for numbers starting with 2
+gst — Fixed checksum validation for special category states (97, 99)
+dob — Fixed curly_braces_in_flow_control_structures lint warning
+cardNumber — Fixed Luhn algorithm for 13-digit card numbers (older Visa cards)
+
+🔧 Code Quality
+
+Removed unused _inv table from aadhaar_validator.dart (unused_field warning fixed)
+Replaced final with const in gst_validator.dart (prefer_const_declarations fixed)
+Added /// dartdoc comments to all 33 public API methods (pub.dev score: 10/10)
+All warnings from flutter analyze resolved — zero issues
+
+📖 Documentation
+
+Full dartdoc coverage on BharatValidator class and all methods
+BharatLocale enum values documented (english, hindi, gujarati)
+Code examples added to every public method
+pub.dev API score improved from 0/10 → 10/10
+
+🤖 CI/CD
+
+Added GitHub Actions workflow for automated releases (release.yml)
+Added CI workflow for PR checks with flutter analyze + flutter test (ci.yml)
+Auto-publish to pub.dev on version tag push (v*.*.*)
+Release notes auto-populated from CHANGELOG.md
+
 ## 1.0.1 — New Validators
 
 swift — SWIFT/BIC code for international bank transfers
