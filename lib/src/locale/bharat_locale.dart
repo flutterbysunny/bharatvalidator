@@ -1,5 +1,21 @@
 /// Supported languages for BharatValidator error messages.
-enum BharatLocale { english, hindi, gujarati }
+/// Supported languages for error messages in BharatValidator.
+///
+/// Pass to [BharatValidator] to change the language of all error messages.
+///
+/// ```dart
+/// final v = BharatValidator(locale: BharatLocale.hindi);
+/// ```
+enum BharatLocale {
+  /// English error messages (default).
+  english,
+
+  /// Hindi (हिन्दी) error messages.
+  hindi,
+
+  /// Gujarati (ગુજરાતી) error messages.
+  gujarati,
+}
 
 /// Centralized error message resolver for all validators.
 class BharatMessages {
