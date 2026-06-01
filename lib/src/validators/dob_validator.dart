@@ -19,15 +19,14 @@ class DobValidator {
       if (parts.length != 3) return msg.dobInvalid;
 
       int day, month, year;
-      // Detect YYYY-MM-DD vs DD/MM/YYYY
       if (parts[0].length == 4) {
-        year = int.parse(parts[0]);
+        year  = int.parse(parts[0]);
         month = int.parse(parts[1]);
-        day = int.parse(parts[2]);
+        day   = int.parse(parts[2]);
       } else {
-        day = int.parse(parts[0]);
+        day   = int.parse(parts[0]);
         month = int.parse(parts[1]);
-        year = int.parse(parts[2]);
+        year  = int.parse(parts[2]);
       }
       date = DateTime(year, month, day);
       if (date.day != day || date.month != month || date.year != year) {
@@ -49,10 +48,13 @@ class DobValidator {
     return null;
   }
 
+  // ✅ FIX: curly braces added to if statement
   int _age(DateTime dob, DateTime now) {
     int age = now.year - dob.year;
     if (now.month < dob.month ||
-        (now.month == dob.month && now.day < dob.day)) age--;
+        (now.month == dob.month && now.day < dob.day)) {
+      age--;
+    }
     return age;
   }
 }
