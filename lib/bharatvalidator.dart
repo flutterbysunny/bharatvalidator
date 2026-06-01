@@ -39,3 +39,6 @@ export 'src/validators/username_validator.dart';
 export 'src/validators/landline_validator.dart';
 export 'src/validators/rera_validator.dart';
 export 'src/validators/udyam_validator.dart';
+export 'src/validators/ration_card_validator.dart';
+export 'src/validators/toll_free_validator.dart';
+export 'src/validators/swift_validator.dart';

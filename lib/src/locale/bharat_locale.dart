@@ -16,7 +16,7 @@ class BharatMessages {
 
   // ── GST ──────────────────────────────────────────────────────────────────
   String get gstRequired => _p('GST number is required.', 'GST नंबर आवश्यक है।', 'GST નંબર જરૂરી છે.');
-  String get gstInvalid  => _p('Enter a valid 15-character GST number.', 'मान्य 15 अक्षर का GST नंबर दर्ज करें।', 'માન્ય 15 અક્ષરનો GST નંબર દાખલ કરો.');
+  String get gstInvalid  => _p('Enter a valid GST number with correct state code and checksum.', 'मान्य GST नंबर दर्ज करें (सही स्टेट कोड और चेकसम)।', 'માન્ય GST નંબર દાખલ કરો (સાચો સ્ટેટ કોડ અને ચેકસમ).');
 
   // ── IFSC ─────────────────────────────────────────────────────────────────
   String get ifscRequired => _p('IFSC code is required.', 'IFSC कोड आवश्यक है।', 'IFSC કોડ જરૂરી છે.');
@@ -40,7 +40,7 @@ class BharatMessages {
 
   // ── Vehicle ──────────────────────────────────────────────────────────────
   String get vehicleRequired => _p('Vehicle number is required.', 'वाहन नंबर आवश्यक है।', 'વાહન નંબર જરૂરી છે.');
-  String get vehicleInvalid  => _p('Enter a valid Indian vehicle number (e.g. GJ01AB1234).', 'मान्य भारतीय वाहन नंबर दर्ज करें (जैसे GJ01AB1234)।', 'માન્ય ભારતીય વાહન નંબર દાખલ કરો (દા.ત. GJ01AB1234).');
+  String get vehicleInvalid  => _p('Enter a valid Indian vehicle number (e.g. GJ01AB1234).', 'मान्य भारतीय वाहन नंबर दर्ज करें।', 'માન્ય ભારતીય વાહન નંબર દાખલ કરો.');
 
   // ── Passport ─────────────────────────────────────────────────────────────
   String get passportRequired => _p('Passport number is required.', 'पासपोर्ट नंबर आवश्यक है।', 'પાસપોર્ટ નંબર જરૂરી છે.');
@@ -64,7 +64,7 @@ class BharatMessages {
 
   // ── Driving License ───────────────────────────────────────────────────────
   String get drivingLicenseRequired => _p('Driving license number is required.', 'ड्राइविंग लाइसेंस नंबर आवश्यक है।', 'ડ્રાઇવિંગ લાઇસન્સ નંબર જરૂરી છે.');
-  String get drivingLicenseInvalid  => _p('Enter a valid driving license (e.g. GJ0120200123456).', 'मान्य ड्राइविंग लाइसेंस दर्ज करें।', 'માન્ય ડ્રાઇવિંગ લાઇસન્સ દાખલ કરો.');
+  String get drivingLicenseInvalid  => _p('Enter a valid driving license number.', 'मान्य ड्राइविंग लाइसेंस दर्ज करें।', 'માન્ય ડ્રાઇવિંગ લાઇસન્સ દાખલ કરો.');
 
   // ── CIN ──────────────────────────────────────────────────────────────────
   String get cinRequired => _p('CIN is required.', 'CIN नंबर आवश्यक है।', 'CIN નંબર જરૂરી છે.');
@@ -130,6 +130,18 @@ class BharatMessages {
   // ── Udyam ────────────────────────────────────────────────────────────────
   String get udyamRequired => _p('Udyam registration number is required.', 'उद्यम नंबर आवश्यक है।', 'ઉદ્યમ નંબર જરૂરી છે.');
   String get udyamInvalid  => _p('Enter a valid Udyam number (e.g. UDYAM-MH-01-0012345).', 'मान्य उद्यम नंबर दर्ज करें।', 'માન્ય ઉદ્યમ નંબર દાખલ કરો.');
+
+  // ── SWIFT ────────────────────────────────────────────────────────────────
+  String get swiftRequired => _p('SWIFT/BIC code is required.', 'SWIFT/BIC कोड आवश्यक है।', 'SWIFT/BIC કોડ જરૂરી છે.');
+  String get swiftInvalid  => _p('Enter a valid SWIFT/BIC code (e.g. SBININBB).', 'मान्य SWIFT/BIC कोड दर्ज करें (जैसे SBININBB)।', 'માન્ય SWIFT/BIC કોડ દાખલ કરો (દા.ત. SBININBB).');
+
+  // ── Ration Card ──────────────────────────────────────────────────────────
+  String get rationCardRequired => _p('Ration card number is required.', 'राशन कार्ड नंबर आवश्यक है।', 'રેશન કાર્ડ નંબર જરૂરી છે.');
+  String get rationCardInvalid  => _p('Enter a valid ration card number.', 'मान्य राशन कार्ड नंबर दर्ज करें।', 'માન્ય રેશન કાર્ડ નંબર દાખલ કરો.');
+
+  // ── Toll-free ────────────────────────────────────────────────────────────
+  String get tollFreeRequired => _p('Toll-free number is required.', 'टोल-फ्री नंबर आवश्यक है।', 'ટોલ-ફ્રી નંબર જરૂરી છે.');
+  String get tollFreeInvalid  => _p('Enter a valid toll-free number (e.g. 1800-123-4567).', 'मान्य टोल-फ्री नंबर दर्ज करें (जैसे 1800-123-4567)।', 'માન્ય ટોલ-ફ્રી નંબર દાખલ કરો (દા.ત. 1800-123-4567).');
 
   // ─────────────────────────────────────────────────────────────────────────
   String _p(String en, String hi, String gu) {

@@ -2,6 +2,25 @@
 
 All notable changes to **BharatValidator** will be documented in this file.
 
+## 1.0.1 — New Validators
+
+swift — SWIFT/BIC code for international bank transfers
+rationCard — Indian ration card number
+tollFree — Indian toll-free numbers (1800, 1860, 1900)
+
+🔒 Deep Validation (Breaking Improvement)
+
+aadhaar — Now uses Verhoeff checksum algorithm (same as UIDAI) — rejects fake numbers
+gst — Now validates state code (01–37) + checksum character — rejects invalid GST
+
+💅 Example App Improvements
+
+Search bar — filter validators by name or category instantly
+Copy button — copy hint value to clipboard on every field
+Stats bar — shows total validator count and language count
+Better section headers — colored left border accent
+Cleaner architecture — _ValidatorItem model, grouped rendering
+
 ---
 
 ## 1.0.0 — Initial Release

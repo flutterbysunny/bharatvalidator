@@ -15,6 +15,8 @@ import 'bharatvalidator.dart';
 /// TextFormField(validator: (val) => v.dob(val, minAge: 18))
 /// TextFormField(validator: (val) => v.amount(val, min: 1, max: 100000))
 /// ```
+/// 🇮🇳 BharatValidator — Ultimate India-specific form validation.
+/// 33+ validators covering all Indian use cases.
 class BharatValidator {
   final BharatMessages _msg;
 
@@ -22,11 +24,12 @@ class BharatValidator {
       : _msg = BharatMessages(locale: locale);
 
   // ── Identity ──────────────────────────────────────────────────────────────
-  String? aadhaar(String? v)   => AadhaarValidator(_msg).validate(v);
-  String? pan(String? v)       => PanValidator(_msg).validate(v);
-  String? passport(String? v)  => PassportValidator(_msg).validate(v);
-  String? voterId(String? v)   => VoterIdValidator(_msg).validate(v);
+  String? aadhaar(String? v)        => AadhaarValidator(_msg).validate(v);
+  String? pan(String? v)            => PanValidator(_msg).validate(v);
+  String? passport(String? v)       => PassportValidator(_msg).validate(v);
+  String? voterId(String? v)        => VoterIdValidator(_msg).validate(v);
   String? drivingLicense(String? v) => DrivingLicenseValidator(_msg).validate(v);
+  String? rationCard(String? v)     => RationCardValidator(_msg).validate(v);
 
   // ── Tax & Business ────────────────────────────────────────────────────────
   String? gst(String? v)   => GstValidator(_msg).validate(v);
@@ -43,9 +46,9 @@ class BharatValidator {
   String? cardNumber(String? v)  => CardNumberValidator(_msg).validate(v);
   String? micr(String? v)        => MicrValidator(_msg).validate(v);
   String? epf(String? v)         => EpfValidator(_msg).validate(v);
+  String? swift(String? v)       => SwiftValidator(_msg).validate(v);
 
-  /// Amount validator with optional min/max (in ₹).
-  /// Example: `v.amount(val, min: 1, max: 100000)`
+  /// Amount with optional ₹ min/max. e.g. `v.amount(val, min: 1, max: 100000)`
   String? amount(String? v, {double? min, double? max}) =>
       AmountValidator(_msg, min: min, max: max).validate(v);
 
@@ -53,14 +56,13 @@ class BharatValidator {
   String? phone(String? v)    => PhoneValidator(_msg).validate(v);
   String? email(String? v)    => EmailValidator(_msg).validate(v);
   String? landline(String? v) => LandlineValidator(_msg).validate(v);
+  String? tollFree(String? v) => TollFreeValidator(_msg).validate(v);
 
   // ── Health ────────────────────────────────────────────────────────────────
   String? abha(String? v) => AbhaValidator(_msg).validate(v);
 
-  // ── Address ───────────────────────────────────────────────────────────────
+  // ── Address & Vehicle ─────────────────────────────────────────────────────
   String? pincode(String? v) => PincodeValidator(_msg).validate(v);
-
-  // ── Vehicle ───────────────────────────────────────────────────────────────
   String? vehicle(String? v) => VehicleValidator(_msg).validate(v);
 
   // ── Personal ──────────────────────────────────────────────────────────────
@@ -68,16 +70,14 @@ class BharatValidator {
   String? password(String? v) => PasswordValidator(_msg).validate(v);
   String? username(String? v) => UsernameValidator(_msg).validate(v);
 
-  /// DOB validator with optional minAge/maxAge.
-  /// Example: `v.dob(val, minAge: 18, maxAge: 60)`
+  /// DOB with optional age check. e.g. `v.dob(val, minAge: 18)`
   String? dob(String? v, {int? minAge, int? maxAge}) =>
       DobValidator(_msg, minAge: minAge, maxAge: maxAge).validate(v);
 
   // ── Digital ───────────────────────────────────────────────────────────────
   String? url(String? v) => UrlValidator(_msg).validate(v);
 
-  /// OTP validator. Default length is 6.
-  /// Example: `v.otp(val, length: 4)`
+  /// OTP with length. e.g. `v.otp(val, length: 4)`
   String? otp(String? v, {int length = 6}) =>
       OtpValidator(_msg, length: length).validate(v);
 }

@@ -1,13 +1,11 @@
 name: bharatvalidator
 description: >-
   🇮🇳 India-first Flutter form validation package with 30+ validators.
-  Covers Aadhaar, PAN, GST, IFSC, UPI, Driving License, Passport, Voter ID,
-  CIN, TAN, FSSAI, ABHA, EPF, Card (Luhn), MICR, RERA, Udyam and more.
-  Multi-language error messages: English, Hindi & Gujarati.
-version: 1.0.0
-homepage: https://github.com/yourusername/bharatvalidator
-repository: https://github.com/yourusername/bharatvalidator
-issue_tracker: https://github.com/yourusername/bharatvalidator/issues
+  Covers Aadhaar, PAN, GST, IFSC, UPI, Driving License, Passport, Voter ID etc.
+version: 1.0.1
+homepage: https://github.com/flutterbysunny/bharatvalidator
+repository: https://github.com/flutterbysunny/bharatvalidator
+issue_tracker: https://github.com/flutterbysunny/bharatvalidator/issues
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
