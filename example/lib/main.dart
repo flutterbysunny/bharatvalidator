@@ -158,7 +158,11 @@ class _ValidatorDemoPageState extends State<ValidatorDemoPage> {
   @override
   void dispose() {
     _searchCtrl.dispose();
-    for (final c in _controllers.values) c.dispose();
+
+    for (final c in _controllers.values) {
+      c.dispose();
+    }
+
     super.dispose();
   }
 
@@ -211,7 +215,7 @@ class _ValidatorDemoPageState extends State<ValidatorDemoPage> {
         children: [
           // Stats bar
           Container(
-            color: Theme.of(context).colorScheme.primary.withOpacity(0.08),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.08),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
               children: [
