@@ -44,7 +44,8 @@ class BharatValidator {
   /// ```dart
   /// TextFormField(validator: v.aadhaar)
   /// ```
-  String? aadhaar(String? v) => AadhaarValidator(_msg).validate(v);
+  String? aadhaar(String? v, {bool deep = false}) =>
+      AadhaarValidator(_msg, deep: deep).validate(v);
 
   /// Validates an Indian PAN card number.
   ///

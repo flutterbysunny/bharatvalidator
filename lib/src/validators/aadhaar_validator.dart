@@ -1,10 +1,15 @@
 import '../locale/bharat_locale.dart';
 
 /// Validates Indian Aadhaar number.
-/// Deep validation using Verhoeff checksum algorithm (same as UIDAI).
+/// - Basic: 12 digits, cannot start with 0 or 1
+/// - Deep: Verhoeff checksum algorithm (opt-in via [deep] flag)
 class AadhaarValidator {
   final BharatMessages msg;
-  const AadhaarValidator(this.msg);
+  final bool deep;
+
+  /// [deep] enables Verhoeff checksum — rejects mathematically invalid numbers.
+  /// Default is `false` so test/demo numbers still pass.
+  const AadhaarValidator(this.msg, {this.deep = false});
 
   static const _d = [
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -30,8 +35,6 @@ class AadhaarValidator {
     [7, 0, 4, 6, 9, 1, 3, 2, 5, 8],
   ];
 
-  // ✅ FIX: _inv removed — only needed for check digit generation, not validation
-
   bool _verhoeff(String number) {
     int c = 0;
     final reversed = number.split('').reversed.toList();
@@ -46,7 +49,7 @@ class AadhaarValidator {
     if (value == null || value.trim().isEmpty) return msg.aadhaarRequired;
     final clean = value.replaceAll(RegExp(r'\s+'), '');
     if (!RegExp(r'^[2-9]{1}[0-9]{11}$').hasMatch(clean)) return msg.aadhaarInvalid;
-    if (!_verhoeff(clean)) return msg.aadhaarInvalid;
+    if (deep && !_verhoeff(clean)) return msg.aadhaarInvalid;
     return null;
   }
 }
